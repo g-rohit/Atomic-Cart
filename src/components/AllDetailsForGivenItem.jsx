@@ -1,7 +1,7 @@
 import AddToCart from "./Buttons/AddToCart"
 
 function AllDetailsForGivenItem({givenItem}) {
-    console.log('givenItem: ', givenItem.image)
+    // console.log('givenItem: ', givenItem.image)
   return (
      <div
         className="flex flex-col md:flex-row gap-6 m-4 p-4 items-center"

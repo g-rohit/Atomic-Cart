@@ -3,7 +3,9 @@ import AddToCart from './Buttons/AddToCart'
 import EachProdDetailsBtn from './Buttons/EachProdDetailsBtn'
 
 export default function EachItemCard({ eachItem }) {
+const USD_TO_INR = 95;
 
+// console.log('eachItem from EachItemCard Comp', eachItem);
 
   return (
     <div className="bg-gray-50 border border-red-800 w-full max-w-75 m-3 p-4 rounded-2xl shadow transition-transform duration-300 hover:bg-red-100 hover:scale-105 hover:shadow-2xl">
@@ -16,13 +18,13 @@ export default function EachItemCard({ eachItem }) {
       </div>
 
       <h2 className="truncate">{eachItem?.title}</h2>
-      <p>Price: ₹{Math.round(eachItem?.price * 50)}</p>
+      <p>Price: ₹{Math.round(eachItem?.price * USD_TO_INR)}</p>
       <p>Category: {eachItem?.category}</p>
       <p>Rating: {eachItem?.rating?.rate}</p>
 
      <EachProdDetailsBtn id={eachItem?.id} />
 
-    <AddToCart eachItem={eachItem}/>
+    {window.location.pathname.toLowerCase() === '/cart' ? 'Remove from Cart' : <AddToCart eachItem={eachItem}/>}
     </div>
   );
 }

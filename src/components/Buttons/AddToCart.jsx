@@ -9,7 +9,7 @@ export default function AddToCart({ eachItem }) {
       return;
     }
     dispatch(addToCart(eachItem));
-    alert(`"${eachItem.title}" - added to cart successfully`)
+    console.log(`"${eachItem.title}" - added to cart successfully`)
     // console.log(eachItem);
   }
   return (
