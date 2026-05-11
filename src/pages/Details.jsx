@@ -1,11 +1,14 @@
 import Navbar from "../components/Navbar"
-import ProductDetails from "../components/ProductDetails"
+import ProductDetailsPage from "./ProductDetailsPage"
+
+
+
 
 function Details() {
   return (
     <div>
       <Navbar/>
-      <ProductDetails />
+      <ProductDetailsPage/>
     </div>
   )
 }

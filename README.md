@@ -105,4 +105,5 @@ Fetching of Products from api done - 07/02/26, 5:19 PM
 Resumed at 07/02/26, 6:27 PM
 Resumed at 15/02/26, 1:17 PM --> watching video is done
 Resumed at 09/05/26, 4:28 PM --> 10/05/26, 1:12 AM // completed each product page detail, updated routing
-
+10/05/26, 1:11 PM - working on Redux cart 
+11/05/26, 9:01 AM - need to complete cart page functionality / show all products added to cart
