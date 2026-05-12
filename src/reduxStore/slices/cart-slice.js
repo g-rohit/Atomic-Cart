@@ -6,11 +6,14 @@ const initialState = {
     totalQuantity: 0,
     totalAmount: 0,
 };
+const USD_TO_INR = 95;
+
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
         addToCart(state, action) {
+            // console.log(action)
             state.items.push(action.payload)
         },
     }

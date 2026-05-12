@@ -108,3 +108,10 @@ Resumed at 09/05/26, 4:28 PM --> 10/05/26, 1:12 AM // completed each product
 10/05/26, 1:11 PM - working on Redux cart 
 11/05/26, 9:01 AM - need to complete cart page functionality / show all products added to cart
 11/05/26, 11:36 PM --> 12/05/26, 12:38 AM - worked on listing cart items by mapping them and created a cart item card component
+12/05/26, 10:09 PM --> 
+* Improved AddToCart component architecture.
+* Used .some() instead of .map().includes() for cart existence checks.
+* Fixed duplicate add-to-cart bug by adding return after existence check.
+* Removed unnecessary key prop misuse from standalone button elements.
+* Reduced repeated logic by storing cart existence check in a variable.
+13/05/26, 1:20 AM

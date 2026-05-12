@@ -5,6 +5,8 @@ import EachProdDetailsBtn from './Buttons/EachProdDetailsBtn'
 export default function EachItemCard({ eachItem }) {
 const USD_TO_INR = 95;
 
+
+
 // console.log('eachItem from EachItemCard Comp', eachItem);
 
   return (
@@ -24,7 +26,7 @@ const USD_TO_INR = 95;
 
      <EachProdDetailsBtn id={eachItem?.id} />
 
-    {window.location.pathname.toLowerCase() === '/cart' ? 'Remove from Cart' : <AddToCart eachItem={eachItem}/>}
+    <AddToCart eachItem={eachItem}/>
     </div>
   );
 }

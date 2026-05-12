@@ -1,6 +1,16 @@
 import AddToCart from "./Buttons/AddToCart"
+// import { useSelector } from "react-redux"
 
 function AllDetailsForGivenItem({givenItem}) {
+  //   const cartItems = useSelector((state) => {
+  //   return state.cart.items;
+  // });
+
+  // console.log(cartItems);
+  // variable array containing ids of the existing items in cart
+
+  // const itemExistsInCart = cartItems.some((item)=>item.id === givenItem.id);
+
     // console.log('givenItem: ', givenItem.image)
   return (
      <div
@@ -46,7 +56,9 @@ function AllDetailsForGivenItem({givenItem}) {
           </div>
 
           <div className="mt-5">
-            <AddToCart/>
+
+            <AddToCart eachItem={givenItem}/> 
+          
           </div>
         </div>
       </div>
