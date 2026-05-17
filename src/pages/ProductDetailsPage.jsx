@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import AddToCart from "../components/Buttons/AddToCart";
 import { useEffect, useState } from "react";
+import HandleCartAddOrRemove from "../components/Buttons/HandleCartAddOrRemove";
 import AllDetailsForGivenItem from "../components/AllDetailsForGivenItem";
 
 export default function ProductDetailsPage() {
@@ -46,15 +46,20 @@ export default function ProductDetailsPage() {
     <>
       {products ? (
         <>
-          <div className="flex justify-between ">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 px-4 py-3">
             <div>
-              <h1 className="text-2xl font-extrabold tracking-tight text-red-900 sm:text-3xl m-4 p-4">
+              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-red-900">
                 PRODUCT DETAILS:
               </h1>
             </div>
-            <div className="m-4 p-4 text-gray-600">
-              <Link to={"/"}>
-                <span className="mr-2">&larr;</span> Go back{" "}
+
+            <div className="text-gray-600 self-start sm:self-auto">
+              <Link
+                to={"/"}
+                className="inline-flex items-center gap-2 hover:text-black transition-colors duration-200"
+              >
+                <span>&larr;</span>
+                <span>Go back</span>
               </Link>
             </div>
           </div>

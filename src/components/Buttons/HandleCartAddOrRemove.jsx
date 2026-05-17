@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../reduxStore/slices/cart-slice";
 import { useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../reduxStore/slices/cart-slice";
 
-export default function AddToCart({ eachItem }) {
+export default function HandleCartAddOrRemove({ eachItem }) {
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => {
@@ -26,24 +26,25 @@ const itemExists = cartItems.some((item)=> item.id === eachItem.id);
     }
 
     dispatch(addToCart(eachItem));
-    console.log(`"${eachItem.title}" - added to cart successfully`);
+    console.log(`"${eachItem.title}" ---- added to cart successfully`);
     // console.log(eachItem);
   }
 
   function handleRemoveFromCart() {
-    console.log("remove from cart");
+    dispatch(removeFromCart(eachItem));
+    console.log(`${eachItem.title} ::: removed from cart`);
   }
   return itemExists ? (
     <button
       onClick={handleRemoveFromCart}
-      className="ml-2 mt-2 px-2 py-1 text-sm inline-flex items-center justify-center  text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-red-800 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-900 active:shadow-lg transition duration-150 ease-in-out cursor-pointer bg-linear-to-r from-red-400 via-red-700 to-rose-900"
+      className="ml-3 mt-2 min-w-[140px] h-9 px-3 text-xs sm:text-sm inline-flex items-center justify-center text-center whitespace-nowrap text-white font-semibold rounded-md shadow-md hover:scale-105 transition-all duration-200 cursor-pointer bg-gradient-to-r from-red-500 via-red-700 to-rose-900"
     >
       Remove from Cart
     </button>
   ) : (
     <button
       onClick={handleAddToCart}
-className="ml-2 mt-2 px-2 py-1 text-sm inline-flex items-center justify-center text-white font-normal rounded shadow-md cursor-pointer bg-linear-to-r from-red-400 via-red-700 to-rose-900"
+      className="ml-3 mt-2 min-w-[140px] h-9 px-3 text-xs sm:text-sm inline-flex items-center justify-center text-center whitespace-nowrap text-white font-semibold rounded-md shadow-md hover:scale-105 transition-all duration-200 cursor-pointer bg-gradient-to-r from-red-500 via-red-700 to-rose-900"
     >
       Add to Cart
     </button>

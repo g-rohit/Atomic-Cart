@@ -1,7 +1,9 @@
-import AddToCart from "./Buttons/AddToCart"
+import HandleCartAddOrRemove from "./Buttons/HandleCartAddOrRemove"
 // import { useSelector } from "react-redux"
 
 function AllDetailsForGivenItem({givenItem}) {
+  const USD_TO_INR = 95;
+
   //   const cartItems = useSelector((state) => {
   //   return state.cart.items;
   // });
@@ -14,19 +16,19 @@ function AllDetailsForGivenItem({givenItem}) {
     // console.log('givenItem: ', givenItem.image)
   return (
      <div
-        className="flex flex-col md:flex-row gap-6 m-4 p-4 items-center"
+        className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 px-4 py-6 items-center"
       >
         {/* left section */}
-        <div className="product-image-container md:w-1/2 flex justify-center">
+        <div className="product-image-container w-full lg:w-[45%] flex justify-center">
           <img
             src={`${ givenItem?.image}`}
             alt="product-name"
-            className="max-h-[500px] object-contain"
+            className="max-h-[420px] w-full max-w-md object-contain"
           />
         </div>
         {/* right section */}
-        <div className="md:w-1/2 flex flex-col justify-center h-full mt-4 p-6 ">
-          <div className="mt-4 p-6 rounded-2xl shadow-2xl">
+        <div className="w-full lg:w-[55%] flex flex-col justify-center">
+          <div className="w-full p-6 rounded-2xl shadow-xl border border-gray-100">
             <h2 className="text-2xl font-bold mb-2">
               { givenItem?.title} 
             </h2>
@@ -34,7 +36,7 @@ function AllDetailsForGivenItem({givenItem}) {
             <h3>
               <span className="font-bold">Price:</span>{" "}
               <span className="text-2xl font-medium text-red-800 sm:text-4xl">
-                ${ givenItem?.price} 
+                ₹{Math.round(givenItem?.price * USD_TO_INR)}
               </span>
             </h3>
             <p className="text-wrap mt-5">
@@ -57,7 +59,8 @@ function AllDetailsForGivenItem({givenItem}) {
 
           <div className="mt-5">
 
-            <AddToCart eachItem={givenItem}/> 
+             
+            <HandleCartAddOrRemove eachItem={givenItem}/>
           
           </div>
         </div>

@@ -114,4 +114,6 @@ Resumed at 09/05/26, 4:28 PM --> 10/05/26, 1:12 AM // completed each product
 * Fixed duplicate add-to-cart bug by adding return after existence check.
 * Removed unnecessary key prop misuse from standalone button elements.
 * Reduced repeated logic by storing cart existence check in a variable.
-13/05/26, 1:20 AM
+13/05/26, 1:20 AM --> added remove cart button 
+17/05/26, 5:11 PM --> 17/05/26, 7:57 PM --> Project done successfully 
+* Added remove from cart functionality

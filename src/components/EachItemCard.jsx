@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import AddToCart from './Buttons/AddToCart'
+
 import EachProdDetailsBtn from './Buttons/EachProdDetailsBtn'
+import HandleCartAddOrRemove from "./Buttons/HandleCartAddOrRemove";
 
 export default function EachItemCard({ eachItem }) {
 const USD_TO_INR = 95;
@@ -26,7 +27,8 @@ const USD_TO_INR = 95;
 
      <EachProdDetailsBtn id={eachItem?.id} />
 
-    <AddToCart eachItem={eachItem}/>
+    <HandleCartAddOrRemove eachItem={eachItem}/>
+     
     </div>
   );
 }

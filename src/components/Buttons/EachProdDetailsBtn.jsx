@@ -5,7 +5,7 @@ export default function EachProdDetailsBtn({ id }) {
   return (
     <Link
       to={`/product-details/${id}`}
-      className="px-2 py-1 mr-2 mt-2 inline-block bg-gray-500 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out text-center"
+      className="flex-1 h-8 px-4 inline-flex items-center justify-center rounded-xl text-sm font-semibold text-white bg-slate-500 hover:bg-slate-800 transition-all duration-200 shadow-md hover:shadow-lg"
     >
       Details
     </Link>

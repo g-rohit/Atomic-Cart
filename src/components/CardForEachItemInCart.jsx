@@ -1,6 +1,13 @@
-import EachProdDetailsBtn from './Buttons/EachProdDetailsBtn';
+import { useDispatch } from "react-redux";
+import EachProdDetailsBtn from "./Buttons/EachProdDetailsBtn";
+import { removeFromCart } from "../reduxStore/slices/cart-slice";
 
 export default function CardForEachItemInCart({ eachItem }) {
+  const dispatch = useDispatch();
+  function handleRemoveFromCart() {
+    dispatch(removeFromCart(eachItem));
+    console.log(`${eachItem.title} ::: removed from cart`);
+  }
   const USD_TO_INR = 95;
   return (
     <div className="bg-white border transition-all duration-300 m-2 p-3 rounded-xl shadow-sm overflow-hidden flex flex-col items-center gap-4 border-gray-200 w-full max-w-[320px] mx-auto">
@@ -18,17 +25,20 @@ export default function CardForEachItemInCart({ eachItem }) {
         <h2 className="font-semibold text-gray-900 text-sm break-words leading-5 px-1 line-clamp-2">
           {eachItem?.title}
         </h2>
-        <p className="text-red-800 font-semibold text-sm mt-1">₹{Math.round(eachItem?.price * USD_TO_INR)}</p>
+        <p className="text-red-800 font-semibold text-sm mt-1">
+          ₹{Math.round(eachItem?.price * USD_TO_INR)}
+        </p>
         {/* <p className='mt-2 text-2xl'>Quantity: </p> */}
       </div>
-
-
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-2 w-full mt-2 items-stretch">
         <EachProdDetailsBtn id={eachItem?.id} />
 
-        <button className="px-4 py-3 text-xs font-semibold text-white bg-red-900 rounded-md hover:bg-red-700 shadow-sm transition-colors w-full cursor-pointer">
+        <button
+          onClick={handleRemoveFromCart}
+          className="px-4 py-3 text-xs font-semibold text-white bg-red-900 rounded-md hover:bg-red-700 shadow-sm transition-colors w-full cursor-pointer"
+        >
           Remove
         </button>
       </div>
